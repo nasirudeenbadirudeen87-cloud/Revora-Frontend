@@ -1,3 +1,4 @@
+import '../components/TwoFactorSetup.css';
 import React, { useState, useCallback, useRef } from 'react';
 import {
   Eye,
@@ -124,13 +125,13 @@ const TwoFactorBackupCodesPage: React.FC = () => {
         </div>
       </div>
 
-      <div ref={codesGridRef} className="tfa-recovery-grid" style={{ gridTemplateColumns: 'repeat(5,1fr)' }}>
+      <div ref={codesGridRef} className="tfa-recovery-grid">
         {codes.map((code, idx) => (
           <button
             key={code}
             type="button"
             onClick={() => toggleReveal(idx)}
-            className={`tfa-recovery-card ${revealed[idx] ? 'revealed' : 'hidden'}`}
+            className={`tfa-recovery-card ${revealed[idx] ? 'revealed' : 'concealed'}`}
             aria-pressed={revealed[idx]}
             aria-label={`Code ${idx + 1}: ${revealed[idx] ? 'visible' : 'hidden'}`}
           >

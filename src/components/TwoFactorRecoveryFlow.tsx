@@ -1,3 +1,4 @@
+import './TwoFactorSetup.css';
 import React, { useState, useRef, useEffect, useId } from 'react';
 import {
   Mail,
